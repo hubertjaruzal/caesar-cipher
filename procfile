@@ -1,1 +1,2 @@
 web: node server.js
+start: webpack-dev-server --content-base views --inline --hot

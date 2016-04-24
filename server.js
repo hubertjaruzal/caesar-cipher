@@ -1,11 +1,17 @@
-const fallback = require('express-history-api-fallback');
-const express = require('express');
-const app = express();
-
-const root = `${__dirname}/dist`;
-app.use(express.static(root));
-app.use(fallback('index.html', { root }));
-app.get('/', (request, response) => response.render('dist/index.html'));
+var express = require('express');
+var app = express();
 
 app.set('port', (process.env.PORT || 5000));
-app.listen(app.get('port'), () => console.log('Sellektor Admin (production) is running on port', app.get('port')));
+
+app.set('views', __dirname + '/views');
+app.engine('html', require('ejs').renderFile);
+
+
+app.get('/', function (req, res)
+{
+    res.render('index.html');
+});
+
+app.listen(app.get('port'), function() {
+  console.log('Node app is running on port', app.get('port'));
+});
