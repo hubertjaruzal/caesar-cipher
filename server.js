@@ -1,17 +1,36 @@
-var express = require('express');
-var app = express();
+const path = require('path')
+const express = require('express')
 
-app.set('port', (process.env.PORT || 5000));
+module.exports = {
+  app: function () {
+    const app = express()
+    const indexPath = path.join(__dirname, 'views/index.html')
+    const publicPath = express.static(path.join(__dirname, '../public'))
 
-app.set('views', __dirname + '/views');
-app.engine('html', require('ejs').renderFile);
+    app.use('/public', publicPath)
+    app.get('/', function (_, res) { res.sendFile(indexPath) })
 
+    return app
+  }
+}
 
-app.get('/', function (req, res)
-{
-    res.render('index.html');
-});
+const Server = require('./server.js')
+const port = (process.env.PORT || 8080)
+const app = Server.app()
 
-app.listen(app.get('port'), function() {
-  console.log('Node app is running on port', app.get('port'));
-});
+if (process.env.NODE_ENV !== 'production') {
+  const webpack = require('webpack')
+  const webpackDevMiddleware = require('webpack-dev-middleware')
+  const webpackHotMiddleware = require('webpack-hot-middleware')
+  const config = require('./webpack.config.js')
+  const compiler = webpack(config)
+
+  app.use(webpackHotMiddleware(compiler))
+  app.use(webpackDevMiddleware(compiler, {
+    noInfo: true,
+    publicPath: config.output.publicPath
+  }))
+}
+
+app.listen(port)
+console.log(`Listening at http://localhost:${port}`)
