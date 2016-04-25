@@ -1,15 +1,19 @@
-const path = require('path')
-const express = require('express')
+var express = require('express');
+var app = express();
 
-module.exports = {
-  app: function () {
-    const app = express()
-    const indexPath = path.join(__dirname, '/index.html')
-    const publicPath = express.static(path.join(__dirname, './views'))
+app.set('port', (process.env.PORT || 5000));
 
-    app.use('/views', publicPath)
-    app.get('/', function (_, res) { res.sendFile(indexPath) })
+app.use(express.static(__dirname + '/views'));
 
-    return app
-  }
-}
+// views is directory for all template files
+app.set('views', __dirname + '/views');
+app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'html');
+
+app.get('/', function(request, response) {
+  response.render('index.html');
+});
+
+app.listen(app.get('port'), function() {
+  console.log('Node app is running on port', app.get('port'));
+});
