@@ -3,6 +3,14 @@
   "version": "0.0.0",
   "main": "webpack.config.js",
   "dependencies": {
+    "react": "^0.14.6",
+    "react-dom": "^0.14.6",
+    "react-router": "^2.2.2",
+    "express": "^4.13.4",
+    "express-history-api-fallback": "^2.0.0",
+    "extract-text-webpack-plugin": "^0.8.2",
+  },
+  "devDependencies": {
     "compression": "^1.5.0",
     "cors": "^2.7.1",
     "babel-loader": "^6.2.0",
@@ -29,7 +37,6 @@
     "webpack-dev-server": "1.14.0",
     "webpack-hot-middleware": "^2.10.0"
   },
-  "devDependencies": {},
   "scripts": {
     "start": "webpack-dev-server --content-base views --inline --hot",
     "dev": "webpack-dev-server --content-base views --inline --hot",
