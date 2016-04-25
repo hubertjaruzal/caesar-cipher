@@ -2,6 +2,7 @@ var debug = process.env.NODE_ENV !== "production";
 var webpack = require('webpack');
 var path = require('path');
 var Promise = require('es6-promise').Promise;
+require('es6-promise').polyfill();
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
