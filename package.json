@@ -27,6 +27,7 @@
     "style-loader": "^0.12.3",
     "webpack": "^1.12.9",
     "webpack-dev-server": "1.14.0",
+    "es6-promise": "^3.0.2",
     "webpack-hot-middleware": "^2.10.0"
   },
   "devDependencies": {},
