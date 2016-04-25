@@ -16,6 +16,8 @@ var _routerWarning = require('./routerWarning');
 
 var _routerWarning2 = _interopRequireDefault(_routerWarning);
 
+var _PropTypes = require('./PropTypes');
+
 var _React$PropTypes = _react2['default'].PropTypes;
 var bool = _React$PropTypes.bool;
 var object = _React$PropTypes.object;
@@ -72,7 +74,7 @@ var Link = _react2['default'].createClass({
   displayName: 'Link',
 
   contextTypes: {
-    router: object
+    router: _PropTypes.routerShape
   },
 
   propTypes: {
