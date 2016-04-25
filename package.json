@@ -35,7 +35,8 @@
     "dev": "webpack-dev-server --content-base views --inline --hot",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dist": "webpack -p",
-    "postinstall": "webpack --config ./webpack.config.js --progress --colors"
+    "postinstall": "webpack --config ./webpack.config.prod.js --progress --colors",
+    "build": "NODE_ENV=production webpack -p"
   },
   "author": "",
   "license": "ISC",
