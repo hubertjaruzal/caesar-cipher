@@ -1,17 +1,28 @@
-var express = require('express');
-var app = express();
+const express = require('express');
+const connectHistory = require('connect-history-api-fallback');
+const webpack = require('webpack');
+const config = require('./webpack.config.js');
+const compiler = webpack(config);
 
-app.set('port', (process.env.PORT || 5000));
+const app = express();
 
-app.set('views', __dirname + '/views');
-app.engine('html', require('ejs').renderFile);
+app.use(connectHistory({ index: '/index.html' }));
 
-
-app.get('/', function (req, res)
-{
-    res.render('index.html');
+const devMiddleware = require('webpack-dev-middleware')(compiler, {
+  publicPath: config.output.publicPath,
+  stats: true,
 });
 
-app.listen(app.get('port'), function() {
-  console.log('Node app is running on port', app.get('port'));
+app.use(devMiddleware);
+
+const hotMiddleware = require('webpack-hot-middleware');
+app.use(hotMiddleware(compiler, {
+  reload: true,
+}));
+
+app.use(express.static('views/'));
+
+app.set('port', (process.env.PORT || 8080));
+app.listen(app.get('port'), () => {
+  console.log('Sellektor Admin is running on port', app.get('port'));
 });
