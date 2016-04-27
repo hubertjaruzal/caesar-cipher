@@ -22,7 +22,7 @@ export default class Cipher extends React.Component {
 
   render() {
     return(
-      <div>
+      <div class="component__container">
         <h1>Caesar Cipher</h1>
         <Form title={this.state.text} value={this.state.value} changeText={this.changeText.bind(this)} changeValue={this.changeValue.bind(this)}/>
       </div>

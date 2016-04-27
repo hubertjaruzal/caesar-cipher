@@ -1,9 +1,120 @@
+@font-face {
+  font-family: "Cinzel";
+  src: url("../fonts/CinzelFamily/Cinzel/Cinzel-Regular.ttf");
+}
+
+@font-face {
+  font-family: "CinzelBold";
+  src: url("../fonts/CinzelFamily/Cinzel/Cinzel-Bold.ttf");
+}
+
 body {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   margin: 0;
+  overflow: hidden;
 }
 
 h1 {
-  color: red;
+  font-family: Cinzel;
+  font-weight: 100;
+  font-size: 30px;
+  border-bottom: 1px solid black;
+  display: inline-block;
+}
+
+h2 {
+  font-weight: 100;
+  font-size: 16px;
+  font-family: Cinzel;
+  margin-top: 50px;
+}
+
+#app {
+  display: inline-block;
+  width: 100vw;
+  height: 100vh;
+}
+
+.main__container {
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+}
+
+.text__container {
+  width: 50%;
+  height: 100%;
+  display: inline-block;
+  margin: 0;
+  padding: 20px;
+  position: relative;
+  padding: 0;
+  vertical-align: top;
+}
+
+.images__container {
+  width: 50%;
+  height: 100%;
+  display: inline-block;
+  margin: 0;
+  background: linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
+}
+
+.component__container {
+  margin-left: 90px;
+  margin-right: 25px;
+  height: 95%;
+  overflow: auto;
+  textarea {
+    width: 95%;
+    display: block;
+    height: 70px;
+    resize: none;
+    border: none;
+    border-bottom: 1px solid #2cb5e8;
+    margin-bottom: 15px;
+    font-family: Cinzel;
+    outline: none;
+  }
+  select {
+    -webkit-appearance: button;
+    width: 50px;
+    border: none;
+    background: none;
+    border-bottom: 1px solid #2cb5e8;
+    border-radius: 0px;
+    font-size: 16px;
+    font-family: Cinzel;
+    outline: none;
+  }
+}
+
+.nav {
+  height: 100%;
+  width: 75px;
+  border-left: 1px solid #e3e3e3;
+  border-right: 1px solid #e3e3e3;
+  position: absolute;
+  left: 0;
+  ul {
+    -webkit-transform: rotate(270deg) translate(-50%, 0);
+    transform: rotate(270deg) translate(-50%, 0);
+    -webkit-transform-origin: bottom left;
+    transform-origin: bottom left;
+    width: auto;
+    position: absolute;
+    left: 58%;
+    top: 50%;
+    text-transform: none;
+    display: block;
+    white-space: nowrap;
+    padding: 0;
+    li {
+      white-space: nowrap;
+      display: inline-block;
+      margin: 0 20px 0 20px;
+      font-family: Cinzel;
+    }
+  }
 }
