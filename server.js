@@ -1,6 +1,6 @@
 var express = require('express');
 var path = require('path');
-var history = require('connect-history-api-fallback');
+var fallback = require('express-history-api-fallback');
 
 var app = express();
 
@@ -10,7 +10,7 @@ var publicPath = path.resolve(__dirname, 'views');
 
 // We point to our static assets
 app.use(express.static(publicPath));
-app.use(history());
+app.use(fallback('index.html', { root: publicPath }))
 
 // And run the server
 app.listen(port, function () {
