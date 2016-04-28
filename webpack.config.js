@@ -30,6 +30,9 @@ module.exports = {
       }
     ]
   },
+  devServer: {
+        historyApiFallback: true
+  },
   output: {
     path: __dirname + "/views/",
     filename: "application.min.js"
