@@ -31,7 +31,7 @@ module.exports = {
     ]
   },
   devServer: {
-        historyApiFallback: true
+    historyApiFallback: true
   },
   output: {
     path: __dirname + "/views/",
