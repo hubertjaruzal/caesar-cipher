@@ -4,6 +4,16 @@
 }
 
 @font-face {
+  font-family: "Questrial";
+  src: url("../fonts/Questrial/Questrial-Regular.ttf");
+}
+
+@font-face {
+  font-family: "WorkSans";
+  src: url("../fonts/Work_Sans/WorkSans-Light.ttf");
+}
+
+@font-face {
   font-family: "CinzelBold";
   src: url("../fonts/CinzelFamily/Cinzel/Cinzel-Bold.ttf");
 }
@@ -117,4 +127,27 @@ h2 {
       font-family: Cinzel;
     }
   }
+}
+
+.about__text {
+  font-size: 16px;
+  font-family: WorkSans;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.about__blockquote {
+  &:before {
+    text-align: center;
+    content: '""';
+    display: block;
+    font-family: Cinzel;
+    font-weight: 900;
+    font-size: 50px;
+    height: 40px;
+  }
+}
+
+.about__author {
+  text-align: left;
 }

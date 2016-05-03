@@ -17,8 +17,9 @@ export default class Header extends React.Component {
     return(
       <nav class="nav">
         <ul style={navStyle}>
-          <li><Link to="cipher" activeClassName="active" style={itemStyle}>Cipher</Link></li>
-          <li><Link to="about" activeClassName="active" style={itemStyle}>About</Link></li>
+          <li><Link to="decryption" activeClassName="active" style={itemStyle}>Decryption</Link></li>
+          <li><Link to="encryption" activeClassName="active" style={itemStyle}>Encryption</Link></li>
+          <li><Link to="about" activeClassName="active" style={itemStyle}>About Cipher</Link></li>
         </ul>
       </nav>
     );

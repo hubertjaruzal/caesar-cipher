@@ -6,7 +6,8 @@ import { Router, Route, IndexRoute, browserHistory } from "react-router";
 
 import Layout from "./components/layout.js";
 
-import Cipher from "./components/cipher/cipher.js";
+import Encryption from "./components/encryption/encryption.js";
+import Decryption from "./components/decryption/decryption.js";
 import About from "./components/about/about.js";
 
 const app = document.getElementById('app');
@@ -15,7 +16,9 @@ ReactDOM.render(
   <Router history={ browserHistory }>
     <Route path="/" component={ Layout }>
       <IndexRoute component={ About }></IndexRoute>
-      <Route path="cipher" component={ Cipher }>
+      <Route path="encryption" component={ Encryption }>
+      </Route>
+      <Route path="decryption" component={ Decryption }>
       </Route>
       <Route path="about" component={ About }>
       </Route>
