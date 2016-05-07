@@ -25,7 +25,7 @@ module.exports = {
         loader: 'style!css!sass?sourceMap'
       },
       {
-        test   : /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
+        test   : /\.(jpe?g|ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
         loader : 'file-loader'
       }
     ]

@@ -1,3 +1,14 @@
+@keyframes kenburns {
+  0% {
+    opacity: 1;
+  }
+  50% {
+      transform: scale3d(1.5, 1.5, 1.5) translate3d(50px, 120px, 0px);
+      animation-timing-function: ease-in;
+      opacity: 1;
+  }
+}
+
 @font-face {
   font-family: "Cinzel";
   src: url("../fonts/CinzelFamily/Cinzel/Cinzel-Regular.ttf");
@@ -55,6 +66,7 @@ h2 {
 .text__container {
   width: 50%;
   height: 100%;
+  background: white;
   display: inline-block;
   margin: 0;
   padding: 20px;
@@ -68,7 +80,9 @@ h2 {
   height: 100%;
   display: inline-block;
   margin: 0;
-  background: linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
+  background: url('./julius-caesar.jpg') no-repeat 50% 20%;
+  background-size: cover;
+  animation: kenburns 150s infinite;
 }
 
 .component__container {
