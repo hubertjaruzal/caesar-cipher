@@ -6,7 +6,7 @@ export default class Layout extends React.Component {
   render() {
     return(
       <section class="main__container">
-        <section class="images__container">
+        <section class="image__container">
         </section>
         <section class="text__container">
           <Header />

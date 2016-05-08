@@ -75,7 +75,7 @@ h2 {
   vertical-align: top;
 }
 
-.images__container {
+.image__container {
   width: 50%;
   height: 100%;
   display: inline-block;
@@ -87,7 +87,7 @@ h2 {
 
 .component__container {
   margin-left: 90px;
-  margin-right: 25px;
+  padding-right: 25px;
   height: 95%;
   overflow: auto;
   textarea {
@@ -151,6 +151,7 @@ h2 {
 }
 
 .about__blockquote {
+  text-align: justify;
   &:before {
     text-align: center;
     content: '""';
@@ -164,4 +165,11 @@ h2 {
 
 .about__author {
   text-align: left;
+}
+
+.description__text {
+  text-align: left;
+  font-family: Cinzel;
+  margin-bottom: 25px;
+  font-size: 12px;
 }

@@ -49,7 +49,7 @@ export default class FormName extends React.Component {
   render() {
     return(
       <div>
-        <textarea id="encyptText" placeholder="Text" onChange={this.handleChangeText.bind(this)} ></textarea>
+        <textarea id="encyptText" placeholder="Message..." onChange={this.handleChangeText.bind(this)}></textarea>
         <select id="numbers" onChange={this.handleChangeVal.bind(this)}>
           <option value="1">1</option>
           <option value="2">2</option>

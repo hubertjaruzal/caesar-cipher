@@ -24,6 +24,7 @@ export default class Decryption extends React.Component {
     return(
       <div class="component__container">
         <h1>Decryption</h1>
+        <p class="description__text">Write encrypted message and choose right shift.</p>
         <Form title={this.state.text} value={this.state.value} changeText={this.changeText.bind(this)} changeValue={this.changeValue.bind(this)}/>
       </div>
     );
