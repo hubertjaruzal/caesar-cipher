@@ -1,13 +1,12 @@
 var express = require('express');
 var path = require('path');
 var fallback = require('express-history-api-fallback');
-var React = require('react');
 
 var app = express();
 
 var isProduction = process.env.NODE_ENV === 'production';
 var port = isProduction ? process.env.PORT : 3000;
-var publicPath = React.renderToString(__dirname, 'views');
+var publicPath = path.resolve(__dirname, 'views');
 
 // We point to our static assets
 app.use(express.static(publicPath));
