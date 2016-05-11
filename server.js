@@ -1,7 +1,6 @@
 var express = require('express');
 var path = require('path');
 var fallback = require('express-history-api-fallback');
-var ReactDOMServer = require('react-dom/server');
 
 var app = express();
 
@@ -11,7 +10,7 @@ var publicPath = path.resolve(__dirname, 'views');
 
 // We point to our static assets
 app.use(express.static(publicPath));
-app.use(fallback('index.html', { root: ReactDOMServer.renderToString(publicPath) }));
+app.use(fallback('index.html', { root: publicPath }))
 
 // And run the server
 app.listen(port, function () {
