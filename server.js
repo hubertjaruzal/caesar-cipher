@@ -1,6 +1,7 @@
 var express = require('express');
 var path = require('path');
 var fallback = require('express-history-api-fallback');
+var ReactEngine = require('express-react-engine');
 
 var app = express();
 
@@ -8,9 +9,12 @@ var isProduction = process.env.NODE_ENV === 'production';
 var port = isProduction ? process.env.PORT : 3000;
 var publicPath = path.resolve(__dirname, 'views');
 
+
+app.engine('jsx', ReactEngine());
+
 // We point to our static assets
 app.use(express.static(publicPath));
-app.use(fallback('index.html', { root: publicPath }))
+app.use(fallback('index.html', { root: publicPath }));
 
 // And run the server
 app.listen(port, function () {
