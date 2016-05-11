@@ -13,12 +13,6 @@ var publicPath = path.resolve(__dirname, 'views');
 app.use(express.static(publicPath));
 app.use(fallback('index.html', { root: publicPath }));
 
-app.get('/', function(req, res) {
-  /* each route will render the particular component to string. */
-  var markup = ReactDOMServer.renderToString(app);
-  res.send(markup);
-});
-
 // And run the server
 app.listen(port, function () {
   console.log('Server running on port ' + port);
