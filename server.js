@@ -19,7 +19,7 @@ app.listen(port, function () {
 
 
 var React = require('react'),
-ReactApp = React.createFactory(require('../views/js/application'));
+var ReactApp = React.createFactory(require('./views/js/application'));
 
 module.exports = function(app) {
 
