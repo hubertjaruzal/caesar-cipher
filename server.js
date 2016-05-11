@@ -16,20 +16,3 @@ app.use(fallback('index.html', { root: publicPath }))
 app.listen(port, function () {
   console.log('Server running on port ' + port);
 });
-
-
-var React = require('react'),
-var ReactApp = React.createFactory(require('./views/js/application'));
-
-module.exports = function(app) {
-
-  app.get('/', function(req, res){
-
-    // React.renderToString takes your component and generates the markup
-    var reactHtml = React.renderToString(ReactApp({}));
-
-    // Output html rendered by react into .ejs file. Can be any template
-    res.render('index.ejs', {reactOutput: reactHtml});
-  });
-
-};
