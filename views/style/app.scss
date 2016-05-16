@@ -87,6 +87,10 @@ h2 {
     padding: 0;
     vertical-align: top;
   }
+  @media (max-height: 550px) {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .image__container {
@@ -105,6 +109,9 @@ h2 {
     background: url('./julius-caesar.jpg') no-repeat 30% 30%;
     background-size: cover;
     animation: none;
+  }
+  @media (max-height: 550px) {
+    display: none;
   }
 }
 
@@ -158,6 +165,9 @@ h2 {
     white-space: nowrap;
     padding: 0;
     list-style-type: none;
+    @media (max-width: 750px) {
+      top: 40%;
+    }
     li {
       white-space: nowrap;
       display: inline-block;
@@ -167,6 +177,9 @@ h2 {
         text-decoration: none;
         font-size: 15px;
         color: black;
+        @media (max-width: 750px) {
+          font-size: 12px;
+        }
       }
     }
   }
