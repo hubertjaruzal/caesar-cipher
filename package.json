@@ -40,7 +40,7 @@
     "start": "node server",
     "postinstall": "node deploy"
   },
-  "author": "",
+  "author": "Hubert Jaruzal",
   "license": "ISC",
   "keywords": [],
   "description": ""

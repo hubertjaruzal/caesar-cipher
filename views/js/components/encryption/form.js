@@ -1,5 +1,4 @@
 import React from "react";
-
 import Title from "../header/title";
 
 export default class FormName extends React.Component {

@@ -1,5 +1,4 @@
 import React from "react";
-
 import Form from "./form";
 
 export default class Decryption extends React.Component {
